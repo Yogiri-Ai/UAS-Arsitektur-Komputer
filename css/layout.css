@@ -233,6 +233,42 @@ header p {
   font-variant-numeric: tabular-nums;
 }
 
+.hud-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.hud-gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(24, 30, 78, 0.78);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font: 700 0.68rem 'Sora', sans-serif;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.hud-gh svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.hud-gh:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 6px 18px -4px rgba(77, 226, 232, 0.45);
+}
+
 .progress-track {
   max-width: 1180px;
   margin: 7px auto 0;
@@ -362,6 +398,23 @@ header p {
 
   #slideCount {
     white-space: nowrap;
+  }
+
+  .hud-brand-sub {
+    display: none;
+  }
+
+  .hud-right {
+    gap: 6px;
+  }
+
+  .hud-gh {
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  .hud-gh span {
+    display: none;
   }
 
   .nav {

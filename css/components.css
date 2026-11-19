@@ -223,6 +223,17 @@ select option {
 .b3.rs { --c: #ef4d6a; --d: #a3243e; }
 .b3.au { --c: #6d5cf0; --d: #3f31b3; }
 .b3.st { --c: #f4b13a; --d: #b87710; color: #2a1b00; }
+.b3.gh {
+  --c: #262e5c;
+  --d: #141938;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.b3 svg { width: 18px; height: 18px; flex: none; }
 .b3:disabled { opacity: 0.35; pointer-events: none; filter: grayscale(0.6); }
 
 .log {
@@ -689,13 +700,70 @@ input.input-error {
   margin: 0 auto 26px;
 }
 
-.team-meta span {
+.team-meta span,
+.team-meta a.gh-meta {
   padding: 6px 14px;
   border-radius: 999px;
   background: var(--card);
   border: 1px solid var(--line);
   font: 600 0.8rem 'Fira Code', monospace;
   color: var(--gold);
+}
+
+.team-meta a.gh-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-meta a.gh-meta:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+  box-shadow: 0 8px 18px -6px rgba(77, 226, 232, 0.45);
+}
+
+.team-meta a.gh-meta svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+
+.hero-gh-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.hero-gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(24, 30, 78, 0.55);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font: 600 0.82rem 'Sora', sans-serif;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.hero-gh svg {
+  width: 16px;
+  height: 16px;
+  color: var(--cyan);
+  flex: none;
+}
+
+.hero-gh:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 8px 20px -6px rgba(77, 226, 232, 0.4);
 }
 
 .team-grid {
