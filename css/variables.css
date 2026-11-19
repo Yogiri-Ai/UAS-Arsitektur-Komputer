@@ -1,0 +1,28 @@
+:root {
+  --bg: #0d1230;
+  --bg2: #1b1450;
+  --ink: #eef1ff;
+  --mute: #9aa4d6;
+  --gold: #ffd166;
+  --cyan: #4de2e8;
+  --pink: #ff6b9d;
+  --lime: #8cf5a8;
+  --red: #ff5c7c;
+  --blue: #60a5fa;
+  --card: rgba(24, 30, 78, 0.65);
+  --line: rgba(160, 175, 255, 0.22);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1230;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1230;
+}

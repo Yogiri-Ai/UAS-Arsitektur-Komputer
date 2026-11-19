@@ -1,0 +1,66 @@
+@keyframes sway {
+  0%, 100% { transform: rotateY(-9deg) rotateX(3deg); }
+  50% { transform: rotateY(9deg) rotateX(-2deg); }
+}
+
+@keyframes spin {
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes logpop {
+  0% { transform: translateZ(20px) scale(0.97); background: rgba(255, 209, 102, 0.25); }
+  100% { transform: translateZ(20px) scale(1); }
+}
+
+@keyframes flash {
+  0% { transform: scale(1.25); background: var(--gold); color: #10143a; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fl {
+  0%, 100% { transform: rotateY(-12deg) translateY(0); }
+  50% { transform: rotateY(12deg) translateY(-8px); }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dotin {
+  to { opacity: 1; }
+}
+
+@keyframes bgCameraForward {
+  0% { transform: perspective(900px) rotateX(58deg) scale(1.18) translate3d(0, 10%, 0); filter: hue-rotate(0deg); opacity: 0.22; }
+  45% { transform: perspective(650px) rotateX(68deg) scale(2.05) translate3d(0, 17%, 120px); filter: hue-rotate(28deg); opacity: 0.8; }
+  100% { transform: perspective(900px) rotateX(58deg) scale(1.35) translate3d(0, 12%, 0); filter: hue-rotate(0deg); opacity: 0.42; }
+}
+
+@keyframes bgCameraBack {
+  0% { transform: perspective(650px) rotateX(68deg) scale(2.05) translate3d(0, 17%, 120px); filter: hue-rotate(28deg); opacity: 0.8; }
+  55% { transform: perspective(700px) rotateX(48deg) scale(0.82) translate3d(0, 4%, -90px); filter: hue-rotate(-20deg); opacity: 0.25; }
+  100% { transform: perspective(900px) rotateX(58deg) scale(1.35) translate3d(0, 12%, 0); filter: hue-rotate(0deg); opacity: 0.42; }
+}
+
+@keyframes bgVignetteForward {
+  0% { transform: scale(0.82); opacity: 0.25; }
+  50% { transform: scale(1.22); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 0.65; }
+}
+
+@keyframes bgVignetteBack {
+  0% { transform: scale(1.25); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 0.65; }
+}
+
+@keyframes cinemaText {
+  0% { opacity: 0; transform: translateY(18px) scale(0.96); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1, .cube, .cy { animation: none; }
+  .card, .b3, .slide { transition: none; }
+  .stage.bg-forward::before, .stage.bg-back::before,
+  .stage.bg-forward::after, .stage.bg-back::after { animation: none; }
+}

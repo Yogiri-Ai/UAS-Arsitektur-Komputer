@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mini Computer 3D – Kelompok 4 (Simulasi Denda Keterlambatan)</title>
+  
+  <!-- Google Fonts: Sora & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Modular Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Canvas Background Partikel Matematika -->
+  <canvas id="bg"></canvas>
+
+  <!-- 3D Presentation Stage -->
+  <div class="stage" id="stage">
+    
+    <!-- Slide 1: Pembukaan -->
+    <section class="slide cur" data-t="Pembukaan">
+      <div class="wrap hero">
+        <header>
+          <button class="group-pill" data-go="5" title="Lihat Profil Anggota Kelompok 4">
+            <span class="dot-live"></span>
+            <span>KELOMPOK 4 • KELAS G • ORGANISASI &amp; ARSITEKTUR KOMPUTER</span>
+          </button>
+          <h1>Mini Computer <span class="eq">∑</span> Denda<br>Keterlambatan</h1>
+          <p>Simulasi terintegrasi cara kerja CPU, Control Unit, ALU, Register, RAM, Sistem Bus, dan I/O lengkap dengan kategori alat, validasi input, dan percabangan instruksi.</p>
+          <div class="formula">Total = Hari × Tarif (Bebas ≤ 1 hr • Maks Rp500rb)</div>
+          <div class="learn">
+            <span>Arsitektur &amp; Sistem Bus</span>
+            <span>Validasi &amp; Percabangan</span>
+            <span>Kurva Denda Berbatas</span>
+            <span>Tim Kelompok 4</span>
+          </div>
+        </header>
+        <div class="btns" style="justify-content:center;margin-top:26px">
+          <button class="b3 st" data-go="1" style="flex:0 1 230px">Mulai belajar ▶</button>
+          <button class="b3 au" data-go="2" style="flex:0 1 210px">⚙ Buka Simulator</button>
+        </div>
+        <p class="hint">Pindah slide dengan tombol di bawah, tombol panah, atau geser layar.</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Komponen -->
+    <section class="slide" data-t="Komponen">
+      <div class="wrap">
+        <h2 class="sh">Arsitektur &amp; Komponen Mini Computer</h2>
+        <p class="lead">Mini computer ini memodelkan enam elemen inti arsitektur komputer yang bekerja terintegrasi layaknya sebuah dapur terorganisir.</p>
+        <div class="grid">
+          <article class="card tilt">
+            <h3><i>∑</i>CPU &amp; Control Unit</h3>
+            <p>Otak pemroses &amp; pengatur siklus instruksi. Control Unit mengarahkan tahapan Fetch, Decode, Execute, serta lompatan percabangan.</p>
+            <p class="ana">Analogi: kepala koki yang membaca resep &amp; mengatur urutan langkah.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>R</i>Register (R1–R3, PC, IR, Flag)</h3>
+            <p>Memori internal CPU super cepat. R1 menyimpan hari, R2 tarif, R3 hasil total, PC alamat instruksi, IR perintah aktif, dan Flag hasil perbandingan.</p>
+            <p class="ana">Analogi: meja kerja &amp; catatan status cepat milik koki.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>∫</i>RAM (Memori Utama)</h3>
+            <p>Menyimpan 12 instruksi program (alamat 0–11) termasuk percabangan serta variabel hasil denda akhir (alamat 100).</p>
+            <p class="ana">Analogi: rak penyimpanan bahan &amp; catatan bernomor.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>×</i>ALU (Arithmetic Logic Unit)</h3>
+            <p>Unit komputasi aritmatika dan logika. Mengeksekusi perkalian <code>MUL R3, R1, R2</code> serta pembandingan <code>CMP</code> untuk percabangan.</p>
+            <p class="ana">Analogi: kalkulator pintar dengan pembanding syarat.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>⇌</i>Sistem Bus</h3>
+            <p>Jalur komunikasi internal yang terdiri atas Address Bus (alamat), Data Bus (nilai), dan Control Bus (sinyal perintah) antar komponen.</p>
+            <p class="ana">Analogi: jalur kurir pengantar bahan &amp; sinyal antar bagian.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>⇄</i>Perangkat Input &amp; Output</h3>
+            <p>Gerbang interaksi eksternal. Input menerima kategori alat, hari (desimal), dan tarif dengan validasi ketat; Output menampilkan total denda.</p>
+            <p class="ana">Analogi: loket pesanan masuk dan sajian keluar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Simulator -->
+    <section class="slide" data-t="Simulator">
+      <div class="wrap">
+        <h2 class="sh">Coba Sendiri: Simulator Mini Computer</h2>
+        <p class="lead">Pilih kategori alat atau skenario cepat, isi angka, lalu tekan Langkah. Perhatikan baris RAM yang menyala, lompatan PC saat bebas denda atau batas maksimum, serta Sistem Bus.</p>
+        <main class="grid">
+          <section class="card tilt c1">
+            <h3><i>⚙</i>Panel Kontrol &amp; Validasi</h3>
+            <div class="presets-wrap">
+              <small>Skenario Pengujian Cepat (Klik untuk isi):</small>
+              <div class="presets">
+                <button type="button" class="preset-btn" data-hari="1" data-tarif="20000" data-kat="20000">Bebas Denda (1 hr)</button>
+                <button type="button" class="preset-btn" data-hari="2.5" data-tarif="10000" data-kat="10000">Desimal (2,5 hr)</button>
+                <button type="button" class="preset-btn" data-hari="30" data-tarif="20000" data-kat="20000">Batas Maks (30 hr)</button>
+                <button type="button" class="preset-btn err-test" data-hari="-2" data-tarif="20000" data-kat="20000">Uji Error (-2 hr)</button>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="inputKategori">Kategori alat</label>
+              <select id="inputKategori">
+                <option value="5000">Alat kecil — Rp5.000/hari</option>
+                <option value="10000">Alat sedang — Rp10.000/hari</option>
+                <option value="20000" selected>Alat besar — Rp20.000/hari</option>
+                <option value="custom">Tarif khusus (isi manual)</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="inputHari">Jumlah hari terlambat</label>
+              <input type="number" id="inputHari" value="5" min="0" max="365" step="0.5">
+              <small class="hint">Boleh desimal (misal 2,5). Bebas denda untuk keterlambatan ≤ 1 hari.</small>
+            </div>
+            <div class="fg">
+              <label for="inputTarif">Tarif denda per hari (Rp)</label>
+              <input type="number" id="inputTarif" value="20000" min="0" max="100000" step="500">
+              <small class="hint">Maksimum Rp100.000 per hari. Denda dibatasi Rp500.000.</small>
+            </div>
+            <div class="btns">
+              <button class="b3 rs" id="bReset">⟲ Reset</button>
+              <button class="b3 st" id="bStep">▶ Langkah</button>
+              <button class="b3 au" id="bAuto">⏵⏵ Otomatis</button>
+            </div>
+            <div class="log" id="statusLog">Sistem siap. Tekan “Langkah” untuk menjalankan instruksi pertama.</div>
+          </section>
+
+          <section class="card tilt c2">
+            <h3><i>π</i>CPU, Register &amp; Sistem Bus</h3>
+            <div class="top top-3">
+              <div class="chip">
+                <small>PC</small>
+                <b id="regPC">0</b>
+              </div>
+              <div class="chip">
+                <small>IR (Instruksi)</small>
+                <b id="regIR" style="font-size:.78rem">-</b>
+              </div>
+              <div class="chip">
+                <small>Flag CMP</small>
+                <b id="regFlag">0</b>
+              </div>
+            </div>
+            <div class="bus-bar" aria-label="Status Sistem Bus">
+              <div class="bus-pill" id="busAddress">Address Bus</div>
+              <div class="bus-pill" id="busData">Data Bus</div>
+              <div class="bus-pill" id="busControl">Control Bus</div>
+            </div>
+            <div class="cube-stage" aria-hidden="true">
+              <div class="cube" id="cube">
+                <div class="f" id="cf">×</div>
+                <div class="k">+</div>
+                <div class="r">=</div>
+                <div class="l">÷</div>
+                <div class="u">√</div>
+                <div class="d">∞</div>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Register</th>
+                  <th>Isi data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="reg" id="t1">
+                  <td>R1 (hari)</td>
+                  <td id="regR1">0</td>
+                </tr>
+                <tr class="reg" id="t2">
+                  <td>R2 (tarif)</td>
+                  <td id="regR2">0</td>
+                </tr>
+                <tr class="reg" id="t3">
+                  <td>R3 (total)</td>
+                  <td id="regR3">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="card tilt c3">
+            <h3><i>∫</i>Memori Utama (RAM)</h3>
+            <table class="ram">
+              <thead>
+                <tr>
+                  <th>Alamat</th>
+                  <th>Instruksi / data</th>
+                </tr>
+              </thead>
+              <tbody id="ramBody"></tbody>
+            </table>
+          </section>
+
+          <div class="result" id="resultBox" hidden>
+            <span>Total denda yang harus dibayar</span>
+            <strong id="resultVal">Rp0</strong>
+            <small class="result-note" id="resultNote"></small>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Slide 4: Kurva -->
+    <section class="slide" data-t="Kurva">
+      <div class="wrap">
+        <h2 class="sh">Kurva denda: makin lama, makin mahal (berbatas)</h2>
+        <p class="lead">Denda bernilai Rp0 sampai 1 hari, lalu naik linier sesuai tarif per hari hingga berhenti mendatar di batas maksimum Rp500.000.</p>
+        <div class="grid chartgrid">
+          <div class="card tilt">
+            <div id="chart"></div>
+            <div class="readout" id="readout">Arahkan kursor ke kurva untuk melihat nilai tiap hari.</div>
+          </div>
+          <div class="card tilt">
+            <h3><i>ƒ</i>Atur dan pahami</h3>
+            <div class="fg">
+              <label for="rgH">Hari terlambat: <b id="vh"></b></label>
+              <input type="range" id="rgH" min="0" max="365" value="5">
+            </div>
+            <div class="fg">
+              <label for="rgT">Tarif per hari: <b id="vt"></b></label>
+              <input type="range" id="rgT" min="5000" max="100000" step="500" value="20000">
+            </div>
+            <div class="log" id="fx"></div>
+            <p class="ana">Rumusnya y = min(tarif × x, 500.000) untuk x &gt; 1. Tarif menentukan kemiringan garis. Titik merah adalah nilai input simulator.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Instruksi -->
+    <section class="slide" data-t="Instruksi">
+      <div class="wrap">
+        <h2 class="sh">Instruksi program dan percabangan</h2>
+        <p class="lead">Program disimpan di RAM (alamat 0–11) dan dijalankan berurutan. Instruksi percabangan membuat CPU melompat saat bebas denda atau saat mencapai batas maksimum.</p>
+        <div class="card tilt" style="max-width:760px;margin:0 auto">
+          <table class="mean">
+            <thead>
+              <tr>
+                <th>Instruksi</th>
+                <th>Artinya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>INPUT R1</td><td>Ambil jumlah hari (tervalidasi 0–365, boleh desimal), simpan di R1.</td></tr>
+              <tr><td>INPUT R2</td><td>Ambil tarif per hari (tervalidasi 1–100.000), simpan di R2.</td></tr>
+              <tr><td>MUL R3, R1, R2</td><td>ALU mengalikan R1 dan R2, hasilnya masuk ke register R3.</td></tr>
+              <tr><td>MOV R3, 500000</td><td>Mengisi R3 dengan nilai batas maksimum denda (Rp500.000).</td></tr>
+              <tr><td>CMP R1, 1 / R3, 500000</td><td>Membandingkan isi register dengan nilai pembanding untuk set Flag.</td></tr>
+              <tr><td>JLE 9 / JGT 8</td><td>Lompat ke alamat tujuan bila hasil perbandingan ≤ atau &gt; terpenuhi.</td></tr>
+              <tr><td>JMP 9</td><td>Lompat tanpa syarat langsung ke alamat tujuan (STORE R3, 100).</td></tr>
+              <tr><td>STORE R3, 100</td><td>Salin isi R3 ke RAM alamat 100 melalui Data &amp; Address Bus.</td></tr>
+              <tr><td>OUTPUT R3</td><td>Tampilkan total denda ke layar output pengguna.</td></tr>
+              <tr><td>HALT</td><td>Hentikan eksekusi program dengan aman.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cyc">
+          <div class="cy">
+            <b>Fetch</b>
+            <p>CPU mengambil instruksi dari RAM sesuai alamat di PC melalui Address &amp; Data Bus.</p>
+          </div>
+          <div class="cy">
+            <b>Decode</b>
+            <p>Instruksi masuk ke IR dan Control Unit menerjemahkan opcode serta argumennya.</p>
+          </div>
+          <div class="cy">
+            <b>Execute</b>
+            <p>ALU, register, pembanding Flag, atau memori mengerjakan perintahnya.</p>
+          </div>
+          <div class="cy">
+            <b>PC + 1 / Jump</b>
+            <p>PC maju ke alamat berikutnya atau melompat sesuai syarat percabangan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Tim Kelompok -->
+    <section class="slide" data-t="Tim Kelompok">
+      <div class="wrap">
+        <h2 class="sh">Tim Pengembang: Kelompok 4</h2>
+        <p class="lead">Kelas G • Mata Kuliah Organisasi dan Arsitektur Komputer</p>
+        <div class="team-meta">
+          <span>Project Mini Computer</span>
+          <span>Kategori: Intermediate</span>
+          <span>Kasus: Denda Keterlambatan Alat</span>
+        </div>
+        <div class="team-grid">
+          <article class="card tilt team-card">
+            <div class="avatar av-1">RA</div>
+            <h3>Rizki Muhamad Awaludinsyah</h3>
+            <div class="npm-badge">NPM 257006111200</div>
+            <p class="role-tag">Perancangan Flowchart, Alur Control Unit &amp; Tabel Skenario Pengujian</p>
+          </article>
+          <article class="card tilt team-card">
+            <div class="avatar av-2">FD</div>
+            <h3>Fakhri Dinal Maulana Putra</h3>
+            <div class="npm-badge">NPM 257006111205</div>
+            <p class="role-tag">Koordinator Proyek, Integrasi Simulator Web &amp; Logika Komputasi ALU</p>
+          </article>
+          <article class="card tilt team-card">
+            <div class="avatar av-3">MH</div>
+            <h3>Marcellino Herlambang</h3>
+            <div class="npm-badge">NPM 257006111195</div>
+            <p class="role-tag">Analisis IPO, Pemetaan Memori RAM &amp; Alokasi Register CPU</p>
+          </article>
+          <article class="card tilt team-card">
+            <div class="avatar av-4">MR</div>
+            <h3>Muhammad Ramdhani Fathul Muttaqin</h3>
+            <div class="npm-badge">NPM 257006111216</div>
+            <p class="role-tag">Aturan Perhitungan, Validasi Input &amp; Perancangan Sistem I/O</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Kesimpulan -->
+    <section class="slide" data-t="Kesimpulan">
+      <div class="wrap">
+        <h2 class="sh">Kesimpulan</h2>
+        <p class="lead">Tiga poin utama dari simulasi arsitektur komputer oleh Kelompok 4 – Kelas G.</p>
+        <div class="grid">
+          <article class="card tilt">
+            <h3><i>∴</i>Program = Urutan &amp; Percabangan</h3>
+            <p>Komputer menjalankan instruksi RAM sesuai petunjuk PC, serta dapat melompat (<code>JLE</code>, <code>JGT</code>, <code>JMP</code>) berdasarkan kondisi data.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>↻</i>Sinergi Komponen Arsitektur</h3>
+            <p>Control Unit, Register, Flag, ALU, RAM, Sistem Bus, dan I/O bekerja terpadu dalam setiap siklus Fetch–Decode–Execute.</p>
+          </article>
+          <article class="card tilt">
+            <h3><i>ƒ</i>Denda Linear, Ada Batas</h3>
+            <p>Validasi input menjaga data tetap valid, keterlambatan ≤ 1 hari bebas denda (Rp0), dan total denda berhenti di batas maksimum Rp500.000.</p>
+          </article>
+        </div>
+        <div class="btns" style="justify-content:center;margin-top:30px">
+          <button class="b3 rs" id="bAgain" style="flex:0 1 210px">⟲ Ulangi simulasi</button>
+          <button class="b3 st" data-go="5" style="flex:0 1 190px">👥 Tim Kelompok</button>
+          <button class="b3 au" data-go="0" style="flex:0 1 180px">⌂ Ke awal</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- HUD Bar Atas -->
+  <div class="hud" aria-live="polite">
+    <div class="hud-top">
+      <span class="hud-brand">MINI COMPUTER <i>3D</i> • KELOMPOK 4</span>
+      <span id="slideName">PEMBUKAAN</span>
+      <span id="slideCount">01 / 07</span>
+    </div>
+    <div class="progress-track"><span id="progressFill"></span></div>
+  </div>
+
+  <!-- Navigasi Bawah -->
+  <nav class="nav" aria-label="Navigasi slide">
+    <button class="b3 rs" id="bPrev" aria-label="Slide sebelumnya">◀ Kembali</button>
+    <div class="dots" id="dots"></div>
+    <button class="b3 st" id="bNext" aria-label="Slide berikutnya">Lanjut ▶</button>
+  </nav>
+
+  <!-- Modular Scripts -->
+  <script src="js/simulator.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/presentation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
