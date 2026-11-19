@@ -1,4 +1,4 @@
-@import './variables.css';
-@import './layout.css';
-@import './components.css';
-@import './animations.css';
+@import './variables.css?v=2';
+@import './layout.css?v=2';
+@import './components.css?v=2';
+@import './animations.css?v=2';
